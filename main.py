@@ -32,15 +32,9 @@ def fireCheck():
         numpy_array = np.array(data)
         numpy_array = numpy_array.reshape((1, 320, 320, 3))
 
-        response = jsonify({
-            "hello": "hiii"
-        })
-        response.status_code = 202
-        return response
-
-
+        print("making prediction")
         predictions = model.predict(numpy_array)
-
+        print("prediction made:")
         
         if predictions[0][0] > 0.5:
             prediction = "Predicción: Hay Fuego! 🔥"
