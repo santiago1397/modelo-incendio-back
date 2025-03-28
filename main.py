@@ -13,7 +13,7 @@ model = load_model("my_fire_detection_model.keras")
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "https://app-incendio.netlify.app", "methods": ["OPTIONS", "POST"], "allow_headers": ["Content-Type"]}}, supports_credentials=True)
-application = app
+
 
 
 @app.route("/firecheck", methods=['POST','OPTIONS'])
